@@ -24,21 +24,21 @@ Ce document décrit les conventions de nommage utilisées pour les schémas, tab
 
 ## **Conventions de nommage des tables**
 
-### **Bronze Layer**
+### **Règles Bronze**
 - Tous les noms doivent commencer par le nom du système source, et les noms de tables doivent correspondre exactement aux noms d'origine, sans renommage.
 - **`<sourcesystem>_<entity>`**
   - `<sourcesystem>` : Nom du système source (ex. `crm`, `erp`).
   - `<entity>` : Nom exact de la table dans le système source.
   - Exemple : `crm_customer_info` → Informations clients provenant du système CRM.
 
-### **Silver Layer**
+### **Règles Silver**
 - Tous les noms doivent commencer par le nom du système source, et les noms de tables doivent correspondre exactement aux noms d'origine, sans renommage.
 - **`<sourcesystem>_<entity>`**
   - `<sourcesystem>` : Nom du système source (ex. `crm`, `erp`).
   - `<entity>` : Nom exact de la table dans le système source.
   - Exemple : `crm_customer_info` → Informations clients provenant du système CRM.
 
-### **Gold Layer**
+### **Règles Gold**
 - Tous les noms doivent utiliser des appellations métier significatives, en commençant par un préfixe de catégorie.
 - **`<category>_<entity>`**
   - `<category>` : Décrit le rôle de la table, par exemple `dim` (dimension) ou `fact` (table de faits).
