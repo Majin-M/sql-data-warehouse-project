@@ -8,7 +8,7 @@ Il s'agit d'une adaptation en français du projet [SQL Data Warehouse](https://g
 
 ---
 
-## 🏗️ Architecture des données
+##  Architecture des données
 
 L'architecture suit le modèle **Medallion**, avec trois couches **Bronze**, **Silver** et **Gold** :
 
@@ -59,7 +59,7 @@ Ce projet couvre :
 3. **Modélisation des données** : création de tables de faits et de dimensions optimisées pour les requêtes analytiques.
 4. **Analytics & Reporting** : création de rapports et d'analyses SQL pour produire des insights exploitables.
 
-🎯 Ce dépôt est une ressource utile pour les profils souhaitant démontrer leurs compétences en :
+ Ce dépôt est une ressource utile pour les profils souhaitant démontrer leurs compétences en :
 - Développement SQL
 - Architecture de données
 - Data Engineering
@@ -69,7 +69,7 @@ Ce projet couvre :
 
 ---
 
-## 🛠️ Outils utilisés
+##  Outils utilisés
 
 - **[Datasets](datasets/)** : fichiers CSV du projet (CRM et ERP).
 - **[SQL Server Express](https://www.microsoft.com/fr-fr/sql-server/sql-server-downloads)** : serveur de base de données (version 2022 ou supérieure, pour la fonction `DATETRUNC` utilisée dans les analyses).
@@ -78,7 +78,7 @@ Ce projet couvre :
 
 ---
 
-## ▶️ Démarrage rapide
+##  Démarrage rapide
 
 1. Copier le dossier `datasets/` à un emplacement accessible par le service SQL Server, puis adapter si besoin les chemins `BULK INSERT` dans [scripts/bronze/proc_load_bronze.sql](scripts/bronze/proc_load_bronze.sql) (par défaut `C:\sql-data-warehouse-project\datasets\...`).
 2. Exécuter les scripts dans l'ordre suivant :
@@ -98,7 +98,7 @@ Ce projet couvre :
 
 ---
 
-## 🚀 Exigences du projet
+##  Exigences du projet
 
 ### Construction du Data Warehouse (Data Engineering)
 
