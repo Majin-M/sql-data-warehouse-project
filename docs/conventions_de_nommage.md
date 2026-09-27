@@ -69,7 +69,7 @@ Ce document décrit les conventions de nommage utilisées pour les schémas, tab
 - **`dwh_<column_name>`**
   - `dwh` : Préfixe réservé exclusivement aux métadonnées générées par le système.
   - `<column_name>` : Nom descriptif indiquant la finalité de la colonne.
-  - Exemple : `dwh_load_date` → Colonne générée par le système pour stocker la date de chargement de l'enregistrement.
+  - Exemple : `dwh_create_date` → Colonne générée par le système pour stocker la date de chargement de l'enregistrement dans le data warehouse.
 
 ## **Conventions de nommage des procédures stockées**
 

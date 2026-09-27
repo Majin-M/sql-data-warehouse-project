@@ -162,6 +162,10 @@ BEGIN
         PRINT '>> Durée du chargement : ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' secondes';
         PRINT '>> -------------';
 
+		PRINT '------------------------------------------------';
+		PRINT 'Chargement des tables ERP';
+		PRINT '------------------------------------------------';
+
         -- Chargement de silver.erp_cust_az12
         SET @start_time = GETDATE();
 		PRINT '>> Vidage de la table : silver.erp_cust_az12';
@@ -191,10 +195,6 @@ BEGIN
         PRINT '>> Durée du chargement : ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' secondes';
         PRINT '>> -------------';
 
-		PRINT '------------------------------------------------';
-		PRINT 'Chargement des tables ERP';
-		PRINT '------------------------------------------------';
-
         -- Chargement de silver.erp_loc_a101
         SET @start_time = GETDATE();
 		PRINT '>> Vidage de la table : silver.erp_loc_a101';
@@ -207,11 +207,13 @@ BEGIN
 		SELECT
 			REPLACE(cid, '-', '') AS cid, 
 			CASE
-				WHEN TRIM(cntry) = 'DE' THEN 'Allemagne'
-				WHEN TRIM(cntry) IN ('US', 'USA') THEN 'États-Unis'
+				WHEN TRIM(cntry) IN ('DE', 'Germany') THEN 'Allemagne'
+				WHEN TRIM(cntry) IN ('US', 'USA', 'United States') THEN 'États-Unis'
+				WHEN TRIM(cntry) = 'United Kingdom' THEN 'Royaume-Uni'
+				WHEN TRIM(cntry) = 'Australia' THEN 'Australie'
 				WHEN TRIM(cntry) = '' OR cntry IS NULL THEN 'n/a'
-				ELSE TRIM(cntry)
-			END AS cntry -- Normalisation et gestion des codes pays manquants ou vides
+				ELSE TRIM(cntry) -- 'France' et 'Canada' sont identiques en français
+			END AS cntry -- Normalisation en français et gestion des codes pays manquants ou vides
 		FROM bronze.erp_loc_a101;
 	    SET @end_time = GETDATE();
         PRINT '>> Durée du chargement : ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' secondes';
